@@ -9,7 +9,7 @@ def printProduct():
 #3. Faça um programa que imprima a média aritmética entre os números 5, 8, 12.
 def mediaAritmetica():
     print('A Média Aritmética de 5, 8 e 12 é: ')
-    print(f'\n{(5+8+12) /12}\n')
+    print(f'\n{(5+8+12) /3}\n')
 
 #4. Faça um programa que leia e imprima um número inteiro.
 def numeroInteiro():
@@ -54,6 +54,12 @@ def umQuarto():
 #10. Faça um programa que leia três números reais e calcule a
 #    média aritmética destes números. Ao final, o programa deve
 #    imprimir o resultado do cálculo.
+def realAritmetica():
+    numeros = []
+    for i in range(0,3):
+        numeros.append(float(input(f'{i + 1}- Digite um Numero: ')))
+    
+    print(f'O Resultado da soma Aritmetica é: {(numeros[0] + numeros[1] + numeros[2]) /3}')
 
 #11. Faça um programa que leia dois números reais e calcule as
 #    quatro operações básicas entre estes dois números, adição,
@@ -118,4 +124,5 @@ def umQuarto():
 #antecessorESucessor()
 #dadosDoCliente()
 #subtracao()
-umQuarto()
+#umQuarto()
+realAritmetica()
