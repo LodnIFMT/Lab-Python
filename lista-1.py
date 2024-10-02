@@ -1,9 +1,9 @@
 #1. Faça um programa que imprima o seu nome.
-def imprimaNome():
+def printName():
     print('Lucas Oliveira\n')
 
 #2. Faça um programa que imprima o produto dos valores 30 e 27.
-def imprimaProduto():
+def printProduct():
     print(f'30 x 27 = {30*27}')
 
 #3. Faça um programa que imprima a média aritmética entre os números 5, 8, 12.
@@ -25,17 +25,31 @@ def numeroReal():
 #   antecessor e o seu sucessor.
 def antecessorESucessor():
     numero = int(input('Digite Um Numero: '))
-    print(f'O Antecessor de {numero - 1} é: ')
-    print(f'O Sucessor de {numero + 1} é: ')
+    print(f'O Antecessor de é: {numero - 1}')
+    print(f'O Sucessor de  é: {numero + 1}')
     print(f'resultado: {numero -1} {numero} {numero +1}')
 
 #7. Faça um programa que leia o nome o endereço e o telefone de
 #   um cliente e ao final, imprima esses dados.
+def dadosDoCliente():
+    print('|-------{Bem Vindo ao Mercado ZapZap}-------|')
+    nome = input('|-------------:informe Seu Nome:------------|\n|> ')
+    endereco = input('|----------:Informe seu Indereço:-----------|\n|> ')
+    telefone = int(input('|------:Informe um numero de contato:-------|\n|> '))
+
+    print(f'\n| Nome     : {nome}\n| Endereço : {endereco}\n| Telefone : {telefone}')
 
 #8. Faça um programa que leia dois números inteiros e imprima a
 #   subtração deles.
+def subtracao():
+    numero1 = int(input('Digite um Numero: '))
+    numero2 = int(input('Digite um Numero: '))
+    print(f'{numero1} - {numero2} = {numero1 - numero2}')
 
 #9. Faça um programa que leia um número real e imprima ¼ deste número.
+def umQuarto():
+    numero = float(input('Digite um Numero Real: '))
+    print(f'1/4 de {numero} é : {numero / 4}')
 
 #10. Faça um programa que leia três números reais e calcule a
 #    média aritmética destes números. Ao final, o programa deve
@@ -95,9 +109,13 @@ def antecessorESucessor():
 #    em real (R$) de um valor lido em dólar (US$). Para isso, será
 #    necessário também ler o valor da cotação do dólar.
 
-#imprimaNome()
-#imprimaProduto()
+
+#printName()
+#printProduct()
 #mediaAritmetica()
 #numeroInteiro()
 #numeroReal()
-antecessorESucessor()
+#antecessorESucessor()
+#dadosDoCliente()
+#subtracao()
+umQuarto()
