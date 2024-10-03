@@ -1,8 +1,7 @@
 #1. Faça um programa que imprima o seu nome.
 def printName():
-    print('Lucas Oliveira\n')
-
-#2. Faça um programa que imprima o produto dos valores 30 e 27.
+    print('Lucas Oliveira')
+#2 Faça um programa que imprima o produto dos valores 30 e 27.
 def printProduct():
     print(f'30 x 27 = {30*27}')
 
@@ -49,7 +48,7 @@ def subtracao():
 #9. Faça um programa que leia um número real e imprima ¼ deste número.
 def umQuarto():
     numero = float(input('Digite um Numero Real: '))
-    print(f'1/4 de {numero} é : {numero / 4}')
+    print(f'1/4 de {numero} é : {round(numero / 4, 2)}')
 
 #10. Faça um programa que leia três números reais e calcule a
 #    média aritmética destes números. Ao final, o programa deve
@@ -59,16 +58,26 @@ def realAritmetica():
     for i in range(0,3):
         numeros.append(float(input(f'{i + 1}- Digite um Numero: ')))
     
-    print(f'O Resultado da soma Aritmetica é: {(numeros[0] + numeros[1] + numeros[2]) /3}')
+    print(f'O Resultado da soma Aritmetica é: {round((numeros[0] + numeros[1] + numeros[2]) /3, 2)}')
 
 #11. Faça um programa que leia dois números reais e calcule as
 #    quatro operações básicas entre estes dois números, adição,
 #    subtração,multiplicação e divisão. Ao final, o programa
 #    deve imprimir os resultados dos cálculos.
+def operacoesBasicas():
+    numeros = []
+    for i in range(0,2):
+        numeros.append(float(input(f'{i+1}Digite um Numero: ')))
+
+    print(f'  {numeros[0]} + {numeros[1]} = {round(numeros[0]+numeros[1], 2)}\n')
+    print(f'  {numeros[0]} - {numeros[1]} = {round(numeros[0]-numeros[1], 2)}\n')
+    print(f'  {numeros[0]} x {numeros[1]} = {round(numeros[0]*numeros[1], 2)}\n')
+    print(f'  {numeros[0]} ÷ {numeros[1]} = {round(numeros[0]/numeros[1], 2)}\n')
 
 #12. Faça um programa que leia um número real e calcule o
 #    quadrado deste número. Ao final, o programa deve
 #    imprimir o resultado do cálculo.
+
 
 #13. Faça um programa que leia o saldo de uma conta poupança e
 #    imprima o novo saldo, considerando um reajuste de 2%.
@@ -125,4 +134,5 @@ def realAritmetica():
 #dadosDoCliente()
 #subtracao()
 #umQuarto()
-realAritmetica()
+#realAritmetica()
+operacoesBasicas()
