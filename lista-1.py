@@ -67,7 +67,7 @@ def realAritmetica():
 def operacoesBasicas():
     numeros = []
     for i in range(0,2):
-        numeros.append(float(input(f'{i+1}Digite um Numero: ')))
+        numeros.append(float(input(f'{i+1}- Digite um Numero: ')))
 
     print(f'  {numeros[0]} + {numeros[1]} = {round(numeros[0]+numeros[1], 2)}\n')
     print(f'  {numeros[0]} - {numeros[1]} = {round(numeros[0]-numeros[1], 2)}\n')
@@ -77,10 +77,13 @@ def operacoesBasicas():
 #12. Faça um programa que leia um número real e calcule o
 #    quadrado deste número. Ao final, o programa deve
 #    imprimir o resultado do cálculo.
-
+def elevadoAoQuadrado():
+    numero = float(input('Digite um Numero: '))
+    print(f'O numero {numero}² é igual a {round(numero**2, 2)}')
 
 #13. Faça um programa que leia o saldo de uma conta poupança e
 #    imprima o novo saldo, considerando um reajuste de 2%.
+
 
 #14. Faça um programa que leia a base e a altura de um retângulo
 #    e imprima o perímetro (base + altura) e a área (base * altura / 2).
@@ -135,4 +138,5 @@ def operacoesBasicas():
 #subtracao()
 #umQuarto()
 #realAritmetica()
-operacoesBasicas()
+#operacoesBasicas()
+elevadoAoQuadrado()
