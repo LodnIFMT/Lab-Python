@@ -17,8 +17,9 @@ def numeroInteiro():
 
 #5. Faça um programa que leia dois números reais e os imprima.
 def numeroReal():
-    numero = float(input('Digite Um Numero: '))
-    print(f'O Numero Digitado é {numero}\nE o Tipo dele é: {type(numero)}\n')
+    num1 = float(input('Digite Um Numero: '))
+    num2 = float(input('Digite Um Numero: '))
+    print(f'Numero Digitados: {num1}, {num2}')
 
 #6. Faça um programa que leia um número inteiro e imprima o seu
 #   antecessor e o seu sucessor.
@@ -43,7 +44,7 @@ def dadosDoCliente():
 def subtracao():
     numero1 = int(input('Digite um Numero: '))
     numero2 = int(input('Digite um Numero: '))
-    print(f'{numero1} - {numero2} = {numero1 - numero2}')
+    print(f'{numero1} - {numero2} = {numero1-numero2}')
 
 #9. Faça um programa que leia um número real e imprima ¼ deste número.
 def umQuarto():
@@ -84,7 +85,7 @@ def elevadoAoQuadrado():
 #13. Faça um programa que leia o saldo de uma conta poupança e
 #    imprima o novo saldo, considerando um reajuste de 2%.
 def reajuste():
-    saldo = float(input('Digite o Saldo: '))
+    saldo = round(float(input('Digite o Saldo R$ ')),2)
     print(f'O seu Saldo com reajuste de 2% é: {round(saldo + (saldo * 2 / 100), 2)}')
 
 #14. Faça um programa que leia a base e a altura de um retângulo
@@ -95,7 +96,7 @@ def perimetroDoRetangulo():
     base = float(input('Informe a Base: '))
     altura = float(input('Informe a Altura: '))
 
-    print(f'O Perimetro do retangulo é {round(base + altura, 2)}')
+    print(f'O Perimetro do retangulo é {round(base * 2 + altura * 2, 2)}')
     print(f'A Área do Retangulo é {round(base * altura /2, 2)}')
 
 #15. Faça um programa que leia o valor de um produto, o percentual
@@ -103,7 +104,11 @@ def perimetroDoRetangulo():
 #    do produto subtraindo o desconto.
 def descontoDeProduto():
     produto = float(input('Digite o valor do Produto: '))
-    #CONTINUAR
+    desconto = int(input('Digite a porcentagem do desconto: '))
+    
+    print(f'\nValor Sem desconto --------: {produto}')
+    print(f'Porcentual do desconto ----: {desconto}%')
+    print(f'Valor Com Desconto --------: {round(produto - (produto * desconto /100) ,2)}')
 
 #16. Faça um programa que calcule o reajuste do salário de um
 #    funcionário. Para isso, o programa deverá ler o salário atual
@@ -137,6 +142,13 @@ def converterCentigrados():
 #    • L = Litros de combustível consumidos
 #    Ao final, o programa deverá imprimir a distância percorrida e a
 #    quantidade de litros consumidos na viagem.
+def quantidadeDelitros():
+    tempo = float(input('Digite o tempo decorrido: '))
+    velocidade = int(input('Digite a Velocidade Média: '))
+    distancia = tempo * velocidade
+
+    print(f'A Distância percorrida foi de {distancia}km')
+    print(f'A quantidade de Litros Consumidos foi de {distancia/12}l')
 
 #19. Faça um programa que calcule o valor de uma prestação em atraso.
 #    Para isso, o programa deve ler o valor da prestação vencida, a
@@ -144,6 +156,19 @@ def converterCentigrados():
 #    programa deve imprimir o valor da prestação atrasada, o período
 #    de atraso, os juros que serão cobrados pelo período de atraso, o
 #    valor da prestação acrescido dos juros. Considere juros simples.
+def prestacaoEmAtraso():
+    prestacaoVencida = float(input('Digite o valor da prestação vencida: '))
+    taxaDeJuros = float(input('Digite a taxa periódica de juros: '))
+    periodoDeAtraso = int(input('Digite o período de atraso: '))
+
+    juros = prestacaoVencida * (taxaDeJuros / 100) * periodoDeAtraso
+    valorTotal = prestacaoVencida + juros
+
+    print(f'Valor da Prestação Vencida --------------: {round(prestacaoVencida ,2)}')
+    print(f'Periodo de Atraso -----------------------: {periodoDeAtraso} meses')
+    print(f'juros Cobrado Pelo Periodo de Atraso ----: {round(juros ,2)}')
+    print(f'\nValor total da Prestação em atraso ----: {round(valorTotal ,2)}')
+
 
 #20. Faça um programa que efetue a apresentação do valor da conversão
 #    em real (R$) de um valor lido em dólar (US$). Para isso, será
@@ -166,4 +191,6 @@ def converterCentigrados():
 #perimetroDoRetangulo()
 #descontoDeProduto()
 #calculoDeReajuste()
-converterCentigrados()
+#converterCentigrados()
+#quantidadeDelitros()
+prestacaoEmAtraso()
