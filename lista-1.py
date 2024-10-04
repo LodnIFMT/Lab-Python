@@ -173,7 +173,11 @@ def prestacaoEmAtraso():
 #20. Faça um programa que efetue a apresentação do valor da conversão
 #    em real (R$) de um valor lido em dólar (US$). Para isso, será
 #    necessário também ler o valor da cotação do dólar.
+def dolarEmReal():
+    cotacao = float(input('Digite a cotação do Dolar: '))
+    real = round(float(input('Digite o Valor R$ ')) ,2)
 
+    print(f'O Valor convertido em Dolar: US${round(real * cotacao ,2)}')
 
 #printName()
 #printProduct()
@@ -193,4 +197,5 @@ def prestacaoEmAtraso():
 #calculoDeReajuste()
 #converterCentigrados()
 #quantidadeDelitros()
-prestacaoEmAtraso()
+#prestacaoEmAtraso()
+dolarEmReal()
