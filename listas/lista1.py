@@ -145,7 +145,7 @@ def converterCentigrados():
 def quantidadeDelitros():
     tempo = float(input('Digite o tempo decorrido: '))
     velocidade = int(input('Digite a Velocidade Média: '))
-    distancia = tempo * velocidade
+    distancia = tempo * velocidade /60
 
     print(f'A Distância percorrida foi de {distancia}km')
     print(f'A quantidade de Litros Consumidos foi de {distancia/12}l')
@@ -161,7 +161,7 @@ def prestacaoEmAtraso():
     taxaDeJuros = float(input('Digite a taxa periódica de juros: '))
     periodoDeAtraso = int(input('Digite o período de atraso: '))
 
-    juros = prestacaoVencida * (taxaDeJuros / 100) * periodoDeAtraso
+    juros = prestacaoVencida * (periodoDeAtraso * taxaDeJuros / 100)
     valorTotal = prestacaoVencida + juros
 
     print(f'Valor da Prestação Vencida --------------: {round(prestacaoVencida ,2)}')
@@ -179,23 +179,48 @@ def dolarEmReal():
 
     print(f'O Valor convertido em Dolar: US${round(real * cotacao ,2)}')
 
-#printName()
-#printProduct()
-#mediaAritmetica()
-#numeroInteiro()
-#numeroReal()
-#antecessorESucessor()
-#dadosDoCliente()
-#subtracao()
-#umQuarto()
-#realAritmetica()
-#operacoesBasicas()
-#elevadoAoQuadrado()
-#reajuste()
-#perimetroDoRetangulo()
-descontoDeProduto()
-#calculoDeReajuste()
-#converterCentigrados()
-#quantidadeDelitros()
-#prestacaoEmAtraso()
-#dolarEmReal()
+while True:
+    questao = int(input('Questão a ser executada: '))
+    match questao:
+        case 1:
+            printName()
+        case 2:
+            printProduct()
+        case 3:
+            mediaAritmetica()
+        case 4:
+            numeroInteiro()
+        case 5:
+            numeroReal()
+        case 6:
+            antecessorESucessor()
+        case 7:
+            dadosDoCliente()
+        case 8:
+            subtracao()
+        case 9:
+            umQuarto()
+        case 10:
+            realAritmetica()
+        case 11:
+            operacoesBasicas()
+        case 12:
+            elevadoAoQuadrado()
+        case 13:
+            reajuste()
+        case 14:
+            perimetroDoRetangulo()
+        case 15:
+            descontoDeProduto()
+        case 16:
+            calculoDeReajuste()
+        case 17:
+            converterCentigrados()
+        case 18:
+            quantidadeDelitros()
+        case 19:
+            prestacaoEmAtraso()
+        case 20:
+            dolarEmReal()
+        case _:
+            break

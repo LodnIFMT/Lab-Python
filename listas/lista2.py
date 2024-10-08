@@ -35,19 +35,48 @@ def q2():
 def q3():
     num = int(input('Digite um Numero: '))
     
-    if num/3 == 0:
+    if num%3 == 0:
         print(f'{num} é múltiplo de 3')
     else:
         print(f'{num} não é múltiplo de 3')
 
 #4. Faça um programa que leia um número e informe se ele é ou não divisível por 5.
+def q4():
+    num = int(input('Digite um Numero: '))
+
+    if num%5 == 0:
+        print(f'{num} é múltiplo de 5')
+    else:
+        print(f'{num} não é múltiplo de 5')
 
 #5. Faça um programa que leia um número e informe se ele é divisível por 3 e por 7.
+def q5():
+    num = int(input('Digite um Numero: '))
+
+    if num%3 == 0 and num%7 == 0:
+        print(f'{num} é divisivel por 3 e 7')
+    elif num%3 == 0:
+        print(f'{num} é divisivel por 3 mas não é divisivel por 7')
+    elif num%7 == 0:
+        print(f'{num} é divisivel por 7 mas não é divisivel por 3')
+    else:
+        print(f'{num} não é divisivel por 3 e 7')
 
 #6. A prefeitura do Rio de Janeiro abriu uma linha de crédito para os funcionários
 #   estatutários. O valor máximo da prestação não poderá ultrapassar 30% do salário
 #   bruto. Faça um programa que permita entrar com o salário bruto
 #   e o valor da prestação e informar se o empréstimo pode ou não ser concedido.
+def q6():
+    salario = float(input('Digite seu salario: '))
+    prestacao = float(input('Valor da prestação: '))
+    porcentual = (salario / prestacao) * 0.30
+
+    print(porcentual)
+
+    if porcentual > 30:
+        print('O emprestimo não pode ser concedido pois ultrapassou 30% do seu salario')
+    else:
+        print('O emprestimo foi aprovado com sucesso') #concertar o codigo
 
 #7. Faça um programa que leia um número e indique se o número está compreendido
 #   entre 20 e 50 ou não.
@@ -174,4 +203,7 @@ def q3():
 
 #q1()
 #q2()
-q3()
+#q3()
+#q4()
+#q5()
+q6()
