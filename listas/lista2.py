@@ -69,24 +69,36 @@ def q5():
 def q6():
     salario = float(input('Digite seu salario: '))
     prestacao = float(input('Valor da prestação: '))
-    porcentual = (salario / prestacao) * 0.30
-
-    print(porcentual)
-
-    if porcentual > 30:
-        print('O emprestimo não pode ser concedido pois ultrapassou 30% do seu salario')
+    if prestacao <= 0.3 * salario:
+        print(f'O emprestimo foi aprovado !')
     else:
-        print('O emprestimo foi aprovado com sucesso') #concertar o codigo
+        print('O emprestimo foi Recusado\n!- Ultrapassou 30% do salario bruto') #concertar o codigo
 
 #7. Faça um programa que leia um número e indique se o número está compreendido
 #   entre 20 e 50 ou não.
+def q7():
+    num = round(float(input('Digite um Numero: ')), 2)
+
+    if num >= 20 and num <= 50:
+        print(f'O Numero {num} esta entre os numeros 20 e 50')
+    else:
+        print(f'O Numero {num} não esta entre os numeros 20 e 50')
 
 #8. Faça um programa que leia um número e imprima uma das mensagens:
 #   "Maior do que 20", "Igual a 20"ou "Menor do que 20".
+def q8():
+    num = round(float(input('Digite um Número: ')), 2)
 
+    if num > 20:
+        print('maior do que 20')
+    elif num == 20:
+        print('Igual a 20')
+    else:
+        print('Menor do que 20')
 #9. Faça um programa que permita entrar com o ano de nascimento da pessoa e com o
 #   ano atual. O programa deve imprimir a idade da pessoa. Não se esqueça de
 #   verificar se o ano de nascimento informado é válido.
+
 
 #10. Faça um programa que leia três números inteiros e imprima os três em ordem
 #crescente.
@@ -206,4 +218,6 @@ def q6():
 #q3()
 #q4()
 #q5()
-q6()
+#q6()
+#q7()
+q8()
