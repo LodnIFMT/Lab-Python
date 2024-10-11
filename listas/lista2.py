@@ -1,3 +1,5 @@
+from datetime import date, datetime
+DATA = datetime.now()
 #Exercícios sobre os comandos de condição em python
 
 #1. Faça um programa que leia dois valores numéricos inteiros e efetue
@@ -98,7 +100,18 @@ def q8():
 #9. Faça um programa que permita entrar com o ano de nascimento da pessoa e com o
 #   ano atual. O programa deve imprimir a idade da pessoa. Não se esqueça de
 #   verificar se o ano de nascimento informado é válido.
+def q9():
+    while True:
+        dataNascimento = input('Ano de Nascimento (dd/mm/aaaa): ')
+        nascimento = datetime.strptime(dataNascimento, '%d/%m/%Y')
 
+        if nascimento > DATA:
+            print(f'!- Data de Nascimento {nascimento} Invalido\nData Maxima Permitida: {DATA}')
+            print('\nDigite Novamente')
+        else:
+            break
+
+    print(f'Idade Atual: {round((DATA - nascimento).days/365, 2)}')
 
 #10. Faça um programa que leia três números inteiros e imprima os três em ordem
 #crescente.
@@ -220,4 +233,5 @@ def q8():
 #q5()
 #q6()
 #q7()
-q8()
+#q8()
+q9()
