@@ -1,4 +1,4 @@
-from datetime import date, datetime
+from datetime import datetime
 DATA = datetime.now()
 #Exercícios sobre os comandos de condição em python
 
@@ -112,16 +112,42 @@ def q9():
             break
 
     print(f'Idade Atual: {round((DATA - nascimento).days/365, 2)}')
-
 #10. Faça um programa que leia três números inteiros e imprima os três em ordem
 #crescente.
+def q10():
+    numeros = []
+    for i in range(0,3):
+        numeros.append(int(input(f'{i+1}- Digite um Numero: ')))
+
+    print(f'\n{sorted(numeros)}')
+    
 
 #11. Faça um programa que leia 3 números e imprima o maior deles.
+def q11():
+    numeros = []
+    for i in range(0,3):
+        numeros.append(float(input(f'{i+1}- Digite um Numero: ')))
 
+    if numeros[0] > numeros[1] and numeros[0] > numeros[2]:
+        print(f'O Maior Numero é: {round(numeros[0], 2)}')
+    elif numeros[1] > numeros[0] and numeros[1] > numeros[2]:
+        print(f'O Maior Numero é: {round(numeros[1], 2)}')
+    else:
+        print(f'O Maior Numero é: {round(numeros[2], 2)}')
 #12. Faça um programa que leia a idade de uma pessoa e informe:
 #• Se é maior de idade
 #• Se é menor de idadea
 #• Se é maior de 65 anos
+def q12():
+    idade = int(input('Digite a Idade: '))
+
+    if idade >= 18 and idade < 65:
+        print('Você é maior de Idade')
+    elif idade >= 65:
+        print('Você esta na melhor idade')
+    else:
+        print('Você e menor de Idade')
+
 
 #13. Faça um programa que permita entrar com o nome, a nota da prova 1 e a nota
 #da prova 2 de um aluno. O programa deve imprimir o nome, a nota da prova 1,
@@ -234,4 +260,7 @@ def q9():
 #q6()
 #q7()
 #q8()
-q9()
+#q9()
+#q10()
+#q11()
+q12()
