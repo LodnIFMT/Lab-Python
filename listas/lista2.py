@@ -119,7 +119,16 @@ def q10():
     for i in range(0,3):
         numeros.append(int(input(f'{i+1}- Digite um Numero: ')))
 
-    print(f'\n{sorted(numeros)}')
+    for i in range(0,3):
+        for j in range(0,3):
+            if numeros[i] < numeros[j]:
+                auxiliar = numeros[j]
+                numeros[j] = numeros[i]
+                numeros[i] = auxiliar
+
+    print(f'\n{numeros[0]} {numeros[1]} {numeros[2]}')
+    
+    #print(f'\n{sorted(numeros)}')
     
 
 #11. Faça um programa que leia 3 números e imprima o maior deles.
@@ -154,6 +163,26 @@ def q12():
 #a nota da prova 2, a média das notas e uma das mensagens: "Aprovado",
 #"Reprovado"ou "em Prova Final"(a média é 7 para aprovação, menor que 3 para
 #reprovação e as demais em prova final).
+def q13():
+    nome = str(input('Nome do Aluno(a): '))
+    prova1 = round(float(input('Nota da Primera Prova: ')), 1)
+    prova2 = round(float(input('Nota da Segunda Prova: ')), 1)
+    media = round((prova1 + prova2)/2, 2)
+
+    print('\n---------------Boletin--------------')
+    print(f'Aluno(a): {nome.upper()}')
+    print(f'\nNOTA DA PRIMEIRA PROVA: {prova1}')
+    print(f'NOTA DA PRIMEIRA PROVA: {prova2}')
+    print(f'MÉDIA DO ALUNO:         {media}')
+    
+    if media >= 7:
+        print('\n ALUNO(A) APROVADO')
+    elif media > 3 and media < 7:
+        print('\n ALUNO(A) EM PROVA FINAL')
+    else:
+        print('\n ALUNO(A) REPPROVADO')
+    
+    print('---------------Boletin--------------')
 
 #14. Faça um programa que permita entrar com o salário de uma pessoa e imprima o
 #desconto do INSS segundo a tabela seguir:
@@ -162,6 +191,8 @@ def q12():
 #Maior que R$600,00 e menor ou igual a R$1200,00 20%
 #Maior que R$1200,00 e menor ou igual a R$2000,00 25%
 #Maior que R$2000,00 30%
+def q14():
+    salario = float(input('Digite seu salario: R$'))
 
 #15. Um comerciante comprou um produto e quer vendê-lo com um lucro de 45% se o
 #valor da compra for menor que R$20,00, caso contrário, o lucro será de 30%.
@@ -263,4 +294,6 @@ def q12():
 #q9()
 #q10()
 #q11()
-q12()
+#q12()
+#q13()
+q14()
