@@ -194,9 +194,32 @@ def q13():
 def q14():
     salario = float(input('Digite seu salario: R$'))
 
+    print(f'\nSalario Bruto: R${salario}')
+
+    if salario <= 600.00:
+        print('Desconto do INSS: ISENTO')
+    elif salario > 600.00 and salario <= 1200.00:
+        salario = round(salario - (salario * 20 / 100), 2)
+        print('Desconto do INSS: -20%')
+    elif salario > 1200.00 and salario <= 2000.00:
+        salario = round(salario - (salario * 25 / 100), 2)
+        print('Desconto do INSS: -25%')
+    else:
+        salario = round(salario - (salario * 30 / 100), 2)
+        print('Desconto do INSS: -30%')
+
+    print(f'\nVALOR TOTAL: R${salario}')
+
 #15. Um comerciante comprou um produto e quer vendê-lo com um lucro de 45% se o
 #valor da compra for menor que R$20,00, caso contrário, o lucro será de 30%.
 #Faça um programa que leia o valor do produto e imprima o valor da venda.
+def q15():
+    valorDoProduto = round(float(input('Valor do Produto: ')), 2)
+
+    if valorDoProduto < 20.00:
+        print(f'\nValor da Venda: {round(valorDoProduto + (valorDoProduto * 45/100), 2)}')
+    else:
+        print(f'\nValor da Venda: {round(valorDoProduto + (valorDoProduto * 30/100), 2)}')
 
 #16. A confederação brasileira de natação irá promover eliminatórias para o
 #próximo mundial. Faça um programa que receba a idade de um nadador e imprima
@@ -207,6 +230,21 @@ def q14():
 #Juvenil A 11 - 13 anos
 #Juvenil B 14 - 17 anos
 #Sênior maiores de 18 anos
+def q16():
+    idade = int(input('Idade do Nadador: '))
+
+    if idade >= 5 and idade <= 7:
+        print('Infantil A 5 - 7 anos')
+    elif idade >= 8 and idade <= 10:
+        print('Infantil B 8 - 10 anos')
+    elif idade >= 11 and idade <= 13:
+        print('Juvenil A 11 - 13 anos')
+    elif idade >= 14 and idade <= 17:
+        print('Juvenil B 14 - 17 anos')
+    elif idade > 18:
+        print('Sênior maiores de 18 anos')
+    else:
+        print('Idade Invalida')
 
 #17. Depois da liberação do governo para as mensalidades dos planos de saúde,
 #as pessoas começaram a fazer pesquisas para descobrir um bom plano, não
@@ -220,10 +258,38 @@ def q14():
 #Acima de 45 até 59 anos R$150,00
 #Acima de 59 até 65 anos R$250,00
 #Maior que 65 anos R$400,00
+def q17():
+    nome = input('Digite o Nome: ').upper()
+    idade = int(input('Digite a Idade: '))
+
+    print(f'\nNOME: {nome}')
+    if idade <= 10:
+        print('Valor a pagar: R$30,00')
+    elif idade >= 11 and idade <= 29:
+        print('Valor a pagar: R$60,00')
+    elif idade >= 30 and idade <= 45:
+        print('Valor a pagar: R$120,00')
+    elif idade >= 46 and idade <= 59:
+        print('Valor a pagar: R$150,00')
+    elif idade >= 60 and idade <= 65:
+        print('Valor a pagar: R$250,00')
+    else:
+        print('Valor a pagar: R$400,00')
 
 #18. Faça um programa que leia um número inteiro entre 1 e 12 e escreva o mês
 #correspondente. Caso o usuário digite um número fora desse intervalo, deverá
 #aparecer uma mensagem informando que não existe mês com este número.
+def q18():
+    meses = ['JANEIRO', 'FEVEREIRO', 'MARÇO', 'ABRIL', 'MAIO', 'JUNHO',
+             'JULHO', 'AGOSTO', 'SETEMBRO', 'OUTUBRO', 'NOVEMBRO', 'DEZEMBRO']
+    
+    while True:
+        mes = int(input('Digite o número do Mês: '))
+        if mes >= 1 and mes <= 12:
+            print(f'O mês {mes} é {meses[mes-1]}')
+            break
+        else:
+            print('!- Mês não existe')
 
 #19. Em um campeonato nacional de arco-e-flecha, tem-se equipes de três jogadores
 #para cada estado. Sabendo-se que os arqueiros de uma equipe não obtiveram o
@@ -233,6 +299,7 @@ def q14():
 #• Mostrar esses valores em ordem decrescente;
 #• Se a soma dos pontos for maior do que 100, imprimir a média aritmética entre eles,
 #  caso contrário, imprimir a mensagem "Equipe desclassificada".
+
 
 #20. O banco XXX concederá um crédito especial com juros de 2% aos seus clientes de
 #acordo com o saldo médio no último ano. Faça um programa que leia o saldo médio
@@ -296,4 +363,8 @@ def q14():
 #q11()
 #q12()
 #q13()
-q14()
+#q14()
+#q15()
+#q16()
+#q17()
+q18()
