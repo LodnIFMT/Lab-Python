@@ -299,7 +299,33 @@ def q18():
 #• Mostrar esses valores em ordem decrescente;
 #• Se a soma dos pontos for maior do que 100, imprimir a média aritmética entre eles,
 #  caso contrário, imprimir a mensagem "Equipe desclassificada".
+def q19():
+    jogadoresPontos = []
+    for i in range(0,3):
+        jogadoresPontos.append(int(input(F'Pontos do Jogador {i+1}: ')))
 
+    for i in range(0,3):
+        for j in range(0,3):
+            if jogadoresPontos[i] > jogadoresPontos[j]:
+                aux = jogadoresPontos[j]
+                jogadoresPontos[j] = jogadoresPontos[i]
+                jogadoresPontos[i] = aux
+
+    print('\n----------PLACAR DA EQUIPE----------')
+    for i in range(0,3):
+        print(f'          {i+1}° ----: {jogadoresPontos[i]}')
+
+    somaDosPontos = jogadoresPontos[0] + jogadoresPontos[1] + jogadoresPontos[2]
+    if somaDosPontos > 100:
+        print(f'\nSOMA TOTAL DOS PONTOS -----: {somaDosPontos}')
+        print(f'MÉDIA DA EQUIPE -----------: {round((jogadoresPontos[0] + jogadoresPontos[1] + jogadoresPontos[2])/3, 0)}')
+        print('\n        EQUIPE QUALIFICADA')
+    else:
+        print(f'\nSOMA TOTAL DOS PONTOS -----: {somaDosPontos}')
+        print(f'MÉDIA DA EQUIPE -----------: {round((jogadoresPontos[0] + jogadoresPontos[1] + jogadoresPontos[2])/3, 0)}')
+        print('\n       EQUIPE DESQUALIFICADA')
+
+    
 
 #20. O banco XXX concederá um crédito especial com juros de 2% aos seus clientes de
 #acordo com o saldo médio no último ano. Faça um programa que leia o saldo médio
@@ -367,4 +393,5 @@ def q18():
 #q15()
 #q16()
 #q17()
-q18()
+#q18()
+q19()
