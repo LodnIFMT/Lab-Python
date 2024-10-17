@@ -496,7 +496,33 @@ def q24():
 #0,3 1º grupo
 #0,4 1º e 2º grupos
 #0,5 1º, 2º e 3º grupos
+def q25():
+    indicePoluicao = round(float(input(' Informe Indice da Poluição: ')), 2)
 
+    if indicePoluicao == 0.5:
+        print('Intimar as industrias do 1°, 2° e 3° grupos')
+    elif indicePoluicao == 0.4:
+        print('Intimar as industrias do 1° e 2° grupos')
+    elif indicePoluicao == 0.3:
+        print('Intimar as industrias do 1° grupo')
+    elif indicePoluicao <= 0.25:
+        print('Nivel de Poluição Aceitavel')
+    else:
+        print('Nivel de Poluição Fora dos Limites Conhecidos')
+
+
+while True:
+    atividade = input('Qual Atividade Deseja Executar? ').strip()
+    execute = eval(atividade + '()')
+
+    continua = input('Você Deseja Continuar (sim/não)? ')
+    if continua == 'yes' or continua == 'y' or continua == 'sim' or continua == 's':
+        print('OK DIGITE...')
+    elif continua == 'no' or continua == 'n' or continua == 'não' or continua == 'nao':
+        print('!- ATÉ A PROXIMA')
+        break
+    else:
+        print('!- RESPOSTA INCORRETA, DIGITE SIM OU NÃO')
 #q1()
 #q2()
 #q3()
@@ -520,4 +546,5 @@ def q24():
 #q21()
 #q22()
 #q23()
-q24()
+#q24()
+#q25()
