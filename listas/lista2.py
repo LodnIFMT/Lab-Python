@@ -325,8 +325,6 @@ def q19():
         print(f'MÉDIA DA EQUIPE -----------: {round((jogadoresPontos[0] + jogadoresPontos[1] + jogadoresPontos[2])/3, 0)}')
         print('\n       EQUIPE DESQUALIFICADA')
 
-    
-
 #20. O banco XXX concederá um crédito especial com juros de 2% aos seus clientes de
 #acordo com o saldo médio no último ano. Faça um programa que leia o saldo médio
 #de um cliente e calcule o valor do crédito de acordo com a tabela a seguir.
@@ -337,6 +335,21 @@ def q19():
 #de 501 a 1000 30% do valor do saldo médio
 #de 1001 a 3000 40% do valor do saldo médio
 #acima de 3001 50% do valor do saldo médio
+def q20():
+    saldoMedio = round(float(input('Digite o Saldo Médio do Último Ano: ')),2)
+
+    if saldoMedio <= 500:
+        credito = 0
+    elif saldoMedio > 500 and saldoMedio <= 1000:
+        credito = saldoMedio * 0.30
+    elif saldoMedio > 1000 and saldoMedio <= 3000:
+        credito = saldoMedio * 0.40
+    else:
+        credito = saldoMedio * 0.50
+
+    print(f'\nSaldo Médio ---------: R${saldoMedio}')
+    print(f'Valor do Crédito ----: R${round(credito, 2)}')
+
 
 #21. A biblioteca de uma Universidade deseja fazer um programa que leia o nome do
 #livro que será emprestado, o tipo de usuário (professor ou aluno) e possa
@@ -345,10 +358,39 @@ def q19():
 #• Nome do livro:
 #• Tipo de usuário:
 #• Total de dias:
+def q21():
+    livro = input('Nome do Livro: ').title()
+    while True:
+        print('\nQuem está emprestando o livro?')
+        print('1 - Professor\n2 - Estudante')
+        usuario = int(input('|Digite o numero>  '))
+
+        if usuario > 0 and usuario < 3:
+            break
+        else:
+            print('!- Digite 1 para PROFESSOR e 2 para ALUNO')
+
+    print('---------------RECIBO---------------')
+    print(f'Nome do Livro: {livro}')
+    if usuario == 1:
+        print('Usuario: PROFESSOR\nTotal de Dias: 10')
+    else:
+        print('Usuario: ALUNO\nTotal de Dias: 3')
 
 #22. Construa um programa que leia o percurso em quilômetros, o tipo do carro e
 #informe o consumo estimado de combustível, sabendo-se que um carro tipo A faz
 #12 km com um litro de gasolina, um tipo B faz 9 km e o tipo C 8 km por litro.
+def q22():
+    km = round(float(input('Quilometro do Percurso: ')), 2)
+    tipoDoCarro = input('Tipo do Carro: ').upper()
+
+    match tipoDoCarro:
+        case 'A':
+            print(f'Consumo Estimado: {round(km / 12 ,2)}l')
+        case 'B':
+            print(f'Consumo Estimado: {round(km / 9, 2)}l')
+        case 'C':
+            print(f'Consumo Estimado: {round(km / 8, 2)}l')
 
 #23. Crie um programa que informe a quantidade total de calorias de uma refeição
 #a partir da escolha do usuário que deverá informar o prato, a sobremesa, e
@@ -358,13 +400,92 @@ def q19():
 #Peixe          230cal Sorvete diet     110cal Suco de laranja   70cal
 #Frango         250cal Mousse diet      170cal Suco de melão     100cal
 #Carne          350cal Mousse chocolate 200cal Refrigerante diet 65cal
+def q23():
+    cardapio =[
+        ['Vegetariano ---> 180cal', 'Peixe ---------> 230cal', 'Frango --------> 250cal', 'Carne ---------> 350cal'],
+        ['Abacaxi -----------> 75cal ', 'Sorvete diet ------> 110cal', 'Mouse diet --------> 170cal', 'Mouse chocolate ---> 200cal'],
+        ['Chá -----------------> 20cal ', 'Suco de laranja -----> 70cal ', 'Suco de melão -------> 100cal', 'Refrigerante diet ---> 65cal ']
+    ]
+
+    caloria = [
+        [180, 230, 250, 350],
+        [75, 110, 170, 200],
+        [20, 70, 100, 65]
+    ]
+
+    lista = []
+
+    for i in range(0,3):
+        match i:
+            case 0:
+                print('|------ PRATO PRINCIPAL -----|')
+            case 1:
+                print('|----------- SOBREMESA ----------|')
+            case _:
+                print('|-------------- BEBIDA ------------|')
+        
+        for j in range(0,4):
+            print(f'| {j+1}- {cardapio[i][j]} |')
+
+        if i == 0:
+            while True:
+                num = int(input('Numero do Prato Principal:'))
+                if num > 0 and num < 5:
+                    lista.append(caloria[i][num-1])
+                    break
+                else:
+                    print('!! NUMERO INVALIDO !!')
+        elif i == 1:
+            while True:
+                num = int(input('Numero da Sobremesa:'))
+                if num > 0 and num < 5:
+                    lista.append(caloria[i][num-1])
+                    break
+                else:
+                    print('!! NUMERO INVALIDO !!')
+        else:
+            while True:
+                num = int(input('Numero da Bebida:'))
+                if num > 0 and num < 5:
+                    lista.append(caloria[i][num-1])
+                    break
+                else:
+                    print('!! NUMERO INVALIDO !!')
+
+    print(f'TOTAL DE CALORIAS: {lista[0] + lista[1] + lista[2]}cal')
 
 #24. A polícia rodoviária resolveu fazer cumprir a lei e vistoriar veículos para
 #cobrar dos motoristas o DUT. Sabendo-se que o mês em que o emplacamento do
 #carro deve ser renovado é determinado pelo último número da placa do mesmo,
 #faça um programa que, a partir da leitura da placa do carro, informe o mês
 #em que o emplacamento deve ser renovado.
+def q24():
+    placa = input('Digite a Placa: ').upper()
+    ultimoNumero = int(placa[len(placa)-1])
 
+    if ultimoNumero == 0:
+        print('O Emplacamento deve ser renovado em Janeiro')
+    elif ultimoNumero == 1:
+        print('O Emplacamento deve ser renovado em Fevereiro')
+    elif ultimoNumero == 2:
+        print('O Emplacamento deve ser renovado em Março')
+    elif ultimoNumero == 3:
+        print('O Emplacamento deve ser renovado em Abril')
+    elif ultimoNumero == 4:
+        print('O Emplacamento deve ser renovado em Maio')
+    elif ultimoNumero == 5:
+        print('O Emplacamento deve ser renovado em Junho')
+    elif ultimoNumero == 6:
+        print('O Emplacamento deve ser renovado em Julho')
+    elif ultimoNumero == 7:
+        print('O Emplacamento deve ser renovado em Agosto')
+    elif ultimoNumero == 8:
+        print('O Emplacamento deve ser renovado em Setembro')
+    elif ultimoNumero == 9:
+        print('O Emplacamento deve ser renovado em Outubro')
+    else:
+        print('!! MES INVALIDO !!')
+    
 #25. A prefeitura contratou uma firma especializada para manter os níveis de
 #poluição considerados ideais para um país do 1º mundo. As indústrias,
 #maiores responsáveis pela poluição, foram classificadas em três grupos.
@@ -394,4 +515,9 @@ def q19():
 #q16()
 #q17()
 #q18()
-q19()
+#q19()
+#q20()
+#q21()
+#q22()
+#q23()
+q24()
