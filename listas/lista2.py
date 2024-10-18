@@ -1,4 +1,7 @@
 from datetime import datetime
+from deep_translator import GoogleTranslator
+
+tradutor = GoogleTranslator(source = 'en', target = 'pt')
 DATA = datetime.now()
 #Exercícios sobre os comandos de condição em python
 
@@ -280,16 +283,28 @@ def q17():
 #correspondente. Caso o usuário digite um número fora desse intervalo, deverá
 #aparecer uma mensagem informando que não existe mês com este número.
 def q18():
-    meses = ['JANEIRO', 'FEVEREIRO', 'MARÇO', 'ABRIL', 'MAIO', 'JUNHO',
-             'JULHO', 'AGOSTO', 'SETEMBRO', 'OUTUBRO', 'NOVEMBRO', 'DEZEMBRO']
+    #meses = ['JANEIRO', 'FEVEREIRO', 'MARÇO', 'ABRIL', 'MAIO', 'JUNHO',
+    #         'JULHO', 'AGOSTO', 'SETEMBRO', 'OUTUBRO', 'NOVEMBRO', 'DEZEMBRO']
     
+    #while True:
+    #    mes = int(input('Digite o número do Mês: '))
+    #    if mes >= 1 and mes <= 12:
+    #        print(f'O mês {mes} é {meses[mes-1]}')
+    #        break
+    #    else:
+    #        print('!- Mês não existe')
+
     while True:
-        mes = int(input('Digite o número do Mês: '))
-        if mes >= 1 and mes <= 12:
-            print(f'O mês {mes} é {meses[mes-1]}')
+        numeroMes = int(input('Digite o Núnero do Mes: '))
+
+        if numeroMes < 1 or numeroMes > 12:
+            print(f'!- O Mes {numeroMes} não existe\nDigite um numero entre 1 e 12')
             break
-        else:
-            print('!- Mês não existe')
+
+        mes = datetime.strptime(f'01/{numeroMes}/24','%d/%m/%y')
+        mesExtenso = mes.strftime('%B')
+        print(f'O Mes {numeroMes} é {tradutor.translate(mesExtenso)}')
+
 
 #19. Em um campeonato nacional de arco-e-flecha, tem-se equipes de três jogadores
 #para cada estado. Sabendo-se que os arqueiros de uma equipe não obtiveram o
