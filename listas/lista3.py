@@ -4,20 +4,36 @@ def q1():
 
 #2. Faça um programa que imprima todos os números pares de 100 até 1.
 def q2():
-    num = 101
-    while num > 1:
-        num = num - 1
-        print(num)
+    for i in range(100,0,-1): print(i)
 
 #3. Faça um programa que imprima os múltiplos de 5, no intervalo de 1 até 500.
+
+def q3():
+    for i in range(0,501,5): print(i)
 
 #4. Faça umprograma que permita entrar com o nome, a idade e o sexo de 20
 #pessoas.O programa deve imprimir o nome da pessoa se ela for do sexo masculino
 #e tiver mais de 21 anos.
+def q4():
+    for i in range(21):
+        print(f'\n{i+1}--:')
+        name = input('Nome: ').title()
+        age = int(input('Idade: '))
+        sexo = input('Sexo: ').upper().strip()[0]
+        
+        if sexo == 'M' and age >= 21:
+            print(f'\n{name}')
 
 #5. Sabendo-se que a unidade lógica e aritmética calcula o produto através de somas
 #sucessivas, crie um programa que calcule o produto de dois números inteiros
 #lidos. Suponha que os números lidos sejam positivos.
+def q5():
+    number1 = int(input('Digite o Primeiro Produto: '))
+    number2 = int(input('Digite o Segundo Número:   '))
+
+    for _ in range(number2): number1 = number1*number2
+
+    print(number1)
 
 #6. Crie um programa que imprima os 20 primeiros termos da série de Fibonacci.
 #Observação: os dois primeiros termos desta série são 1 e 1 e os demais são gerados
@@ -265,4 +281,7 @@ def q2():
 #idade.
 
 #q1()
-q2()
+#q2()
+#q3()
+#q4()
+q5()
