@@ -1,3 +1,5 @@
+from canivete import *
+
 #1.Faça um programa que imprima todos os números de 1 até 100.
 def q1():
     for i in range(1,101): print(i)
@@ -85,24 +87,14 @@ def q7():
         name = input('Nome Do Aluno: ').strip().title()
     
         print('PROVA 1:')
-        while True:
-            try:
-                nota1 = float((input('Nota do Aluno:')))
-                break
-            except ValueError:
-                print('!- Valor Informado Invalido')
+        nota1 = float_input('1- Digite a Nota: ')
 
         print('PROVA 2:')
-        while True:
-            try:
-                nota2 = float((input('Nota do Aluno:')))
-                break
-            except ValueError:
-                print('!- Valor Informado Invalido')
+        nota2 = float_input('2- Digite a Nota: ')
 
-        lista.append([name, nota1, nota2])
+        lista.append([name, nota1, nota2][i-1])
+        print(lista[i-1][0])
 
-    
 
 #8. Faça umprograma que permita entrar com o nome e o salário bruto de 10 pessoas.
 #Após ler os dados, imprimir o nome e o valor da alíquota do imposto de renda
