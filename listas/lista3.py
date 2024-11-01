@@ -28,8 +28,31 @@ def q4():
 #sucessivas, crie um programa que calcule o produto de dois números inteiros
 #lidos. Suponha que os números lidos sejam positivos.
 def q5():
-    number1 = int(input('Digite o Primeiro Produto: '))
-    number2 = int(input('Digite o Segundo Número:   '))
+    erro = True
+    while erro == True:
+        number1 = 0
+        number2 = 0
+        
+        try:
+            number1 = int(input('Digite o Primeiro Numero: '))
+        except ValueError:
+            print('!- O Valor informado não é um numero inteiro')
+            print('!- Digite Novamente')
+        except:
+            print('!- Erro Desconhecido, Tente Novamente')
+        else:
+            erro = False
+        
+        erro = True
+        try:
+            number2 = int(input('Digite o Segundo Número:  '))
+        except ValueError:
+            print('!- O Valor informado não é um numero inteiro')
+            print('!- Digite Novamente')
+        except:
+            print('!- Erro Desconhecido, Tente Novamente')
+        else:
+            erro = False
 
     for _ in range(number2): number1 = number1*number2
 
@@ -41,12 +64,45 @@ def q5():
 #• 1 + 1 = 2, terceiro termo;
 #• 1 + 2 = 3, quarto termo, etc.
 # 1 1 2 3 5 8 13 21
+def q6():
+    termos = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765]
+
+    for i in range(2,20):
+        print(f'\n{termos[0]}',end=' ')
+        for j in range(1,i):
+            print(f'+ {termos[j]}',end=' ')
+            if j == i-1:
+                print(f'= {termos[j-1] + termos[j]}')
 
 #7. Crie um programa que permita entrar com o nome, a nota da
 #prova 1 e da prova 2 de 15 alunos. Ao final, imprimir uma listagem, contendo:
 #nome, nota da prova 1, nota da prova 2, e média das notas de cada aluno. Ao final,
 #imprimir a média geral da turma.
+def q7():
+    lista = [[],[],[]]
+    for i in range(15):
+        print(f'\nALUNO - {i+1}')
+        name = input('Nome Do Aluno: ').strip().title()
+    
+        print('PROVA 1:')
+        while True:
+            try:
+                nota1 = float((input('Nota do Aluno:')))
+                break
+            except ValueError:
+                print('!- Valor Informado Invalido')
 
+        print('PROVA 2:')
+        while True:
+            try:
+                nota2 = float((input('Nota do Aluno:')))
+                break
+            except ValueError:
+                print('!- Valor Informado Invalido')
+
+        lista.append[[name], [nota1], [nota2]]
+
+    
 #8. Faça umprograma que permita entrar com o nome e o salário bruto de 10 pessoas.
 #Após ler os dados, imprimir o nome e o valor da alíquota do imposto de renda
 #calculado conforme a tabela a seguir:
@@ -284,4 +340,6 @@ def q5():
 #q2()
 #q3()
 #q4()
-q5()
+#q5()
+#q6()
+q7()
