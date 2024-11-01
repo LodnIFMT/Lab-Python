@@ -79,7 +79,7 @@ def q6():
 #nome, nota da prova 1, nota da prova 2, e média das notas de cada aluno. Ao final,
 #imprimir a média geral da turma.
 def q7():
-    lista = [[],[],[]]
+    lista = [[],[]]
     for i in range(15):
         print(f'\nALUNO - {i+1}')
         name = input('Nome Do Aluno: ').strip().title()
@@ -100,9 +100,10 @@ def q7():
             except ValueError:
                 print('!- Valor Informado Invalido')
 
-        lista.append[[name], [nota1], [nota2]]
+        lista.append([name, nota1, nota2])
 
     
+
 #8. Faça umprograma que permita entrar com o nome e o salário bruto de 10 pessoas.
 #Após ler os dados, imprimir o nome e o valor da alíquota do imposto de renda
 #calculado conforme a tabela a seguir:
