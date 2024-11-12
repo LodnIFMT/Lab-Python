@@ -10,17 +10,43 @@ def show_nome():
 
 janela = Tk()
 janela.title('Minha Janela')
-janela.config(padx=10, pady=10)
+janela.config(
+    padx=10, 
+    pady=10
+    )
 
 lbl_nome = Label(text='Nome: ')
-lbl_nome.grid(row=0, column=0)
+lbl_nome.grid(
+    row=0, 
+    column=0
+    )
+
 lbl_resultado = Label(text='')
-lbl_resultado.grid(row=2, column=0, columnspan=3, sticky='W')
+lbl_resultado.grid(
+    row=2, 
+    column=0, 
+    columnspan=3, 
+    sticky='W'
+    )
 
 txt_nome = Entry(width=40)
-txt_nome.grid(row=0, column=1, columnspan=2, sticky='W')
+txt_nome.grid(
+    row=0, 
+    column=1, 
+    columnspan=2, 
+    sticky='W'
+    )
 
-btn_ok = Button(text='OK', width=20, command=show_nome)
-btn_ok.grid(row=1, column=0, columnspan=3)
+btn_ok = Button(
+    text='OK', 
+    width=20, 
+    command=show_nome
+    )
+
+btn_ok.grid(
+    row=1, 
+    column=0, 
+    columnspan=3
+    )
 
 janela.mainloop()
