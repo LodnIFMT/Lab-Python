@@ -81,19 +81,28 @@ def q6():
 #nome, nota da prova 1, nota da prova 2, e média das notas de cada aluno. Ao final,
 #imprimir a média geral da turma.
 def q7():
-    lista = [[],[]]
-    for i in range(15):
+    nomes = []
+    notas1 = []
+    notas2 = []
+    for i in range(3):
         print(f'\nALUNO - {i+1}')
-        name = input('Nome Do Aluno: ').strip().title()
+        nomes.append(input('Nome Do Aluno: ').strip().title())
     
         print('PROVA 1:')
-        nota1 = float_input('1- Digite a Nota: ')
+        notas1.append(float_input('1- Digite a Nota: '))
 
         print('PROVA 2:')
-        nota2 = float_input('2- Digite a Nota: ')
+        notas2.append(float_input('2- Digite a Nota: '))
 
-        lista.append([name, nota1, nota2][i-1])
-        print(lista[i-1][0])
+    for i in range(3):
+        print('\n--------------->GABARITO<---------------')
+        print(f'ALUNO(A): {nomes[i-1]}')
+        print(f'\nPROVA 1 --------------------------------')
+        
+
+
+
+        
 
 
 #8. Faça umprograma que permita entrar com o nome e o salário bruto de 10 pessoas.
