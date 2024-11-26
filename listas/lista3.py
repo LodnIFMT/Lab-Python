@@ -84,7 +84,9 @@ def q7():
     nomes = []
     notas1 = []
     notas2 = []
-    for i in range(3):
+    mediaGeral = 0
+    media = []
+    for i in range(15):
         print(f'\nALUNO - {i+1}')
         nomes.append(input('Nome Do Aluno: ').strip().title())
     
@@ -94,15 +96,24 @@ def q7():
         print('PROVA 2:')
         notas2.append(float_input('2- Digite a Nota: '))
 
-    for i in range(3):
+        media.append(round((notas1[i] + notas2[i])/2, 2))
+
+    for i in range(15):
         print('\n--------------->GABARITO<---------------')
-        print(f'ALUNO(A): {nomes[i-1]}')
+        print(f'ALUNO(A): {nomes[i]}')
+
         print(f'\nPROVA 1 --------------------------------')
-        
+        print(f'NOTA: {notas1[i]}')
 
+        print(f'\nPROVA 2 --------------------------------')
+        print(f'NOTA: {notas2[i]}')
 
+        print(f'\nMédia do Aluno: {media[i]}')
 
-        
+    for i in range(15):
+        mediaGeral = mediaGeral + media[i]
+
+    print(f'MEDIA DA TURMA: {round(mediaGeral/3, 2)}')
 
 
 #8. Faça umprograma que permita entrar com o nome e o salário bruto de 10 pessoas.
@@ -112,6 +123,25 @@ def q7():
 #Salário menor que R$1300,00 Isento
 #Salário maior ou igual a R$1300,00 e menor que R$2300,00 10% do salário bruto
 #Salário maior ou igual a R$2300,00 15% do salário bruto
+def q8():
+    nomes = []
+    salario = []
+
+    for i in range(10):
+        nomes.append(input('Digite o Nome: '))
+        salario.append(round(float_input('Informe o Salario: '), 2))
+
+        print('\n|------------->IMPOSTO DE RENDA<--------------|')
+        print(f'NOME: {nomes[i]}')
+        
+        if salario[i] < 1300:
+            print('Imposto de Renda: INSENTO')
+        elif salario[i] >= 1300 or salario[i] < 2300:
+            print(f'Imposto de Renda: {round(salario[i] * 0.10, 2)}')
+        else:
+            print(f'Imposto de Renda: {round(salario[i] * 0.15, 2)}')
+
+        print('|--------------------------------------------|\n')
 
 #9. No dia da estréia do filme "Procurando Dory", uma grande emissora de TV realizou
 #uma pesquisa logo após o encerramento do filme. Cada espectador respondeu
@@ -122,6 +152,9 @@ def q7():
 #• A quantidade de pessoas que responderam regular;
 #• A percentagem de pessoas que responderam bom entre todos os expectadores
 #analisados.
+def q9():
+    idade = []
+
 
 #10. Em um campeonato Europeu de Volleyball, se inscreveram 30 países. Sabendo-se
 #que na lista oficial de cada país consta, além de outros dados, peso e idade de 12
@@ -344,4 +377,6 @@ def q7():
 #q4()
 #q5()
 #q6()
-q7()
+#q7()
+#q8()
+q9()
