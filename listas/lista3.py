@@ -153,41 +153,38 @@ def q8():
 #• A percentagem de pessoas que responderam bom entre todos os expectadores
 #analisados.
 def q9():
-    idades = []
-    opinioes = []
-    listaDePessoas ={'Regular': [], 'Bom': [], 'Excelente': []}
-    mediaDeExcelente = 0
+    opinioes = {
+        'Regular': [],
+        'Bom': [],
+        'Excelente': []
+        }
 
-    for i in range(3):
-        print(i+1) 
-        pegandoIdade = int_input('Digite a sua Idade: ')
+
+    for _ in range(3):
+        idade = int_input('Informe sua idade: ')
 
         while True:
-            print('Avalie o filme Procurando Dory:')
-            print('\n3 - Excelente\n2 - Bom\n1 - Regular')
-
-            pegandoOpiniao = int_input('Digite sua resposta: ')
-            if pegandoOpiniao > 0 and pegandoOpiniao < 4:
-                idades.append(pegandoIdade)
-                opinioes.append(pegandoOpiniao)
-                print('Obrigado pela Avaliação')
+            print('Qual a sua avaliação para o filme "Procurando Dory" ?')
+            print('3 - EXCELENTE\n2 - BOM\n1 - REGULAR')
+            resposta = int_input('\nDigite o numero da sua avaliação: ')
+            if resposta > 0 and resposta < 4:
+                match resposta:
+                    case 1:
+                        opinioes['Regular'].append(idade)
+                    case 2:
+                        opinioes['Bom'].append(idade)
+                    case _:
+                        opinioes['Excelente'].append(idade)
+            
                 break
             else:
-                print('(!) - RESPOSTA INVALIDA')
+                print('(!) REPOSTA INVALIDA (!)')
 
-    for i in range(3):
-        if opinioes[i] == 1:
-            listaDePessoas['Regular'] = idades[i]
-        elif opinioes[i] == 2:
-            listaDePessoas['Bom'] = idades[i]
-        else:
-            listaDePessoas['Excelente'] = idades[i]
+    mediaIdade = sum(opinioes['Excelente'])/len(opinioes['Excelente'])
 
-    for idade in listaDePessoas.items():
-    
 
-    print(mediaDeExcelente)
-
+    print(f'Média das idades que responderam Excelente: {round(mediaIdade, 0)}')
+    print(f'Quantidade de pessoas que responderam regular: {len(opinioes["Regular"])}')
 
 
 
