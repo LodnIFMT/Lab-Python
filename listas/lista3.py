@@ -157,8 +157,7 @@ def q9():
         'Regular': [],
         'Bom': [],
         'Excelente': []
-        }
-
+    }
 
     for _ in range(3):
         idade = int_input('Informe sua idade: ')
@@ -175,18 +174,29 @@ def q9():
                         opinioes['Bom'].append(idade)
                     case _:
                         opinioes['Excelente'].append(idade)
-            
                 break
             else:
                 print('(!) REPOSTA INVALIDA (!)')
 
-    mediaIdade = sum(opinioes['Excelente'])/len(opinioes['Excelente'])
+    try:
+        mediaIdade = sum(opinioes['Excelente'])/len(opinioes['Excelente'])
+    except ZeroDivisionError:
+        mediaIdade = 0
+    except:
+        print(f"(!) - Houve algum erro.")
 
+    try:
+        Espectadores = len(opinioes['Excelente']) + len(opinioes['Regular']) + len(opinioes['Bom'])
+        porcentagemBom = (len(opinioes["Bom"])/Espectadores) * 100
+    except ZeroDivisionError:
+        porcentagemBom = 0
+    except:
+        print(f"(!) - Houve algum erro.")    
 
-    print(f'Média das idades que responderam Excelente: {round(mediaIdade, 0)}')
-    print(f'Quantidade de pessoas que responderam regular: {len(opinioes["Regular"])}')
-
-
+    print(f'\nQuantidade de espectadoredes: {Espectadores}')
+    print(f'\nMédia das idades que responderam Excelente: {round(mediaIdade, 0)}')
+    print(f'\nPercentagem de pessoas que responderam bom entre todos os expectadores: {round(porcentagemBom)}')
+    print(f'\nQuantidade de pessoas que responderam regular: {len(opinioes["Regular"])}\n')
 
 #10. Em um campeonato Europeu de Volleyball, se inscreveram 30 países. Sabendo-se
 #que na lista oficial de cada país consta, além de outros dados, peso e idade de 12
