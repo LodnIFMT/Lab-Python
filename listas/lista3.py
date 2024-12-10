@@ -159,7 +159,7 @@ def q9():
         'Excelente': []
     }
 
-    for _ in range(3):
+    for _ in range(20):
         idade = int_input('Informe sua idade: ')
 
         while True:
@@ -206,6 +206,7 @@ def q9():
 #• O atleta mais pesado de cada time;
 #• O atleta mais jovem de cada time;
 #• O peso médio e a idade média de todos os participantes.
+
     
 #11. Construa um programa que leia vários números e informe quantos números
 #entre 100 e 200 foram digitados. Quando o valor 0 (zero) for lido, o algoritmo
