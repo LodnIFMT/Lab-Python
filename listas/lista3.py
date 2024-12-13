@@ -206,16 +206,41 @@ def q9():
 #• O atleta mais pesado de cada time;
 #• O atleta mais jovem de cada time;
 #• O peso médio e a idade média de todos os participantes.
-
     
 #11. Construa um programa que leia vários números e informe quantos números
 #entre 100 e 200 foram digitados. Quando o valor 0 (zero) for lido, o algoritmo
 #deverá cessar sua execução.
+def q11():
+    numDigitado = -1
+    numeros = []
+    while numDigitado != 0:
+        print('! - Digite 0 para encerrar')
+        numDigitado = int_input('Digite o Número: ')
+
+        if numDigitado >= 100 and numDigitado <= 200:
+            numeros.append(numDigitado)
+
+    print('\n-----' * 10)
+    print(f'Total de Numeros (entre 100 e 200): {len(numeros)}')
+    print('Números Entre 100 e 200:')
+    for i in range(len(numeros)):
+        print(f'         {numeros[i]}')
+
 
 #12. Dado um país A, com 5 milhões de habitantes e uma taxa de natalidade de 3% ao
 #ano, e um país B com 7 milhões de habitantes e uma taxa de natalidade de 2% ao
 #ano, fazer um programa que calcule e imprima o tempo necessário para que a
 #população do país A ultrapasse a população do país B.
+def q12():
+    paises = {'A': 5000000, 'B': 7000000}
+    anos = 0
+    while paises['A'] < paises['B']:
+        paises['A'] = paises['A'] * (1 + 0.03)
+        paises['B'] = paises['B'] * (1 + 0.02)
+        ano = ano +1
+
+        print(f'{ano}')
+
 
 #13. Uma empresa de fornecimento de energia elétrica faz a leitura mensal dos medidores
 #de consumo. Para cada consumidor, são digitados os seguintes dados:
@@ -422,4 +447,7 @@ def q9():
 #q6()
 #q7()
 #q8()
-q9()
+#q9()
+
+#q11()
+q12()
