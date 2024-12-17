@@ -237,9 +237,15 @@ def q12():
     while paises['A'] < paises['B']:
         paises['A'] = paises['A'] * (1 + 0.03)
         paises['B'] = paises['B'] * (1 + 0.02)
-        ano = ano +1
+        anos = anos +1
 
-        print(f'{ano}')
+        print('=====' * 5)
+        print(f'Em {anos} ano:')
+        print(f'Pais A: {round(paises["A"], 0)}\nPais B {round(paises["B"], 0)}')
+        print('=====' * 5)
+
+    print(f'\nTempo Necessario: {anos} Ano')
+    print(f'Pais A: {round(paises["A"], 0)}\nPais B {round(paises["B"], 0)}')
 
 
 #13. Uma empresa de fornecimento de energia elétrica faz a leitura mensal dos medidores
@@ -258,6 +264,13 @@ def q12():
 
 #14. Faça um programa que leia vários números inteiros e apresente o fatorial de cada
 #número. O algoritmo encerra quando se digita um número menor do que 1.n
+def q14():
+    numeros = []
+    num = -1
+    while num != 0:
+        num = int_input('Digite o Número: ')
+        numeros.append(num)
+        
 
 #15. Faça um programa que permita entrar com a idade de várias pessoas e
 #imprima:
@@ -450,4 +463,6 @@ def q12():
 #q9()
 
 #q11()
-q12()
+#q12()
+
+q14()
