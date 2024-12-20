@@ -270,7 +270,11 @@ def q14():
     while num != 0:
         num = int_input('Digite o Número: ')
         numeros.append(num)
-        
+
+    for i in range(len(numeros) -1):
+        indice = numeros[i]
+        for j in range(i, 1, -1):
+            print(j)
 
 #15. Faça um programa que permita entrar com a idade de várias pessoas e
 #imprima:
